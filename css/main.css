@@ -1,0 +1,76 @@
+@charset "utf-8";
+
+*{padding: 0px; margin: 0px;}
+
+body{
+    font-family: "맑은 고딕", arial, sans-serif;
+    font-size: 12px;
+    color: #333;
+}
+
+.title01{
+    text-align: center;
+    margin-top: 6px;
+    line-height: 40px;
+}
+
+.title01>img{
+    width: 160px;
+}
+
+.border01{
+    border-top: 3px solid #e44d26;
+    border-bottom: 3px solid #e44d26;
+}
+
+.border02{
+    border-top: 3px solid #1572b6;
+    border-bottom: 3px solid #1572b6;
+}
+
+.bgcolor01{background: #f16529;}
+.bgcolor02{background: #33a9dc;}
+
+section{margin-bottom: 10px;}
+dl{
+    margin: 0px 5px;
+    overflow: hidden;
+}
+dt{
+    font-size: 14px;
+    color: #fff;
+    padding: 12px 0px;
+    font-weight: bold;
+    text-indent: 10px;
+    border-bottom: 1px solid #fff;
+}
+dd{
+    background-color: #eee;
+    border-bottom: 1px solid #ccc;
+}
+dd>a{
+    display: block;
+    font-size: 13px;
+    line-height: 40px;
+    color: #333;
+    text-indent: 20px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+dd>a:hover{
+    font-weight: bold;
+    background: #ffff9f;
+    transform: scale(1.1);
+    text-indent: 50px;
+    box-shadow: 0px 0px 3px #acacac;
+}
+
+footer{
+    line-height: 50px;
+    text-align: center;
+    background: #333;
+}
+footer>address{
+    font-style: normal;
+    color: #fff;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02_math(수학) 객체</title>
+</head>
+<body>
+    <h2>02_math(수학) 객체</h2>
+    <p>수학객체는 다른 내장객체와는 다르게 new키워드를 사용하기 않는 정적인 객체이다.</p>
+    <h3>메서드의 종류</h3>
+    <ul>
+        <li>max(숫자1, 숫자2, 숫자3..) : 숫자들 중에서 최대값을 반환</li>
+        <li>min(숫자1, 숫자2, 숫자3..) : 숫자들 중에서 최소값을 반환</li>
+        <li>round(숫자) : 소수점 첫째 자리를 반올림</li>
+        <li>ceil(숫자) : 소수점 자리를 무조건 올림</li>
+        <li>floor(숫자) : 소수점 자리를 무조건 절삭</li>
+        <li>abs(숫자) : 수의 절대값을 반환</li>
+        <li>random(숫자) : 0과 1사이의 난수를 표시</li>
+    </ul>
+
+    <h3>실습예제 난수를 사용하여 숫자 1~10까지 출력하기</h3>
+    <div id="num"></div>
+
+    <script>
+        let a = 10.54323, b = 30;
+        let max = Math.max(a, b);
+        let min = Math.min(a, b);
+        let round = Math.round(a);
+        let ceil = Math.ceil(a);
+        let floor = Math.floor(a);
+        let abs = Math.abs((a*-1));
+        let random = Math.random();
+        document.write('최대값' + max + '<br>');
+        document.write('최소값' + min + '<br>');
+        document.write('반올림' + round + '<br>');
+        document.write('올림' + ceil + '<br>');
+        document.write('절삭' + floor + '<br>');
+        document.write('절대값' + abs + '<br>');
+        document.write('랜덤' + random + '<br>');
+
+        // let Timer = setInterval(function banner(){
+        //     let number = Math.ceil(random*10);
+        //     document.getElementById("num").innerHTML = '<img src="./images01/banner' + number + '.jpg">';
+        // },3000);
+    </script>
+</body>
+</html>
