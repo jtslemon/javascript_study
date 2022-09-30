@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exec - 영화 포토</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        #banner * {margin: 0px; padding: 0px;}
+        #banner{
+            width: 500px;
+            height: 300px;
+            border: 3px solid #333;
+            position: relative;
+            overflow: hidden;
+        }
+        #photo{
+            height: 105%;
+        }
+        .fas{
+            position: absolute;
+            top: 125px;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            font-size: 50px;
+        }
+        .fa-angle-left{
+            left: 0px;
+        }
+        .fa-angle-right{
+            right: 0px;
+        }
+        #page{
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            font-size: 14px;
+            position: absolute; bottom: 0px; right: 0px;
+            padding: 8px 14px;
+        }
+    </style>
+</head>
+<body>
+    <article id="banner">
+        <img src="./img/movie_image1.png" alt="" id="photo">
+        <i class="fas fa-angle-left"></i>
+        <i class="fas fa-angle-right"></i>
+        <span id="page">1/10</span>
+    </article>
+    <script>
+        let pg = 1;
+        function next(){
+            if(pg == 10){
+                pg = 1;
+            }
+            else{
+                pg++;
+            }
+            document.getElementById('page').innerHTML=pg+'/10';
+            document.getElementById('photo').src='./img/movie_image'+pg+'.png';
+        }
+        function prev(){
+            if(pg == 1){
+                pg = 10;
+            }
+            else{
+                pg--;
+            }
+            document.getElementById('page').innerHTML=pg+'/10';
+            document.getElementById('photo').src='./img/movie_image'+pg+'.png';
+        }
+
+        const l_btn = document.querySelector('.fa-angle-left');
+        const r_btn = document.querySelector('.fa-angle-right');
+
+        l_btn.addEventListener('click', function(e){
+            e.preventDefault(); 
+            prev();          
+        })
+        r_btn.addEventListener('click', function(e){
+            e.preventDefault();
+            next();             
+        })
+    </script>
+</body>
+</html>

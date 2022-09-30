@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03_javascript_function_exec</title>
+    <style>
+        .orange{
+            background: #f90;
+        }
+        .green{
+            background: #0f0;
+        }
+        .blue{
+            background: #00f;
+            color: #fff;
+        }
+        .pouple{
+            background: #90f;
+            color: #fff;
+        }
+        .red{
+            background: #f00;
+            color: #fff;
+        }
+    </style>
+    <script>
+        // let kg = prompt('몸무게를 입력하세요.(단위 KG)');
+        // let m = prompt('키를 입력하세요.(단위 M 소숫점 1번째 자리까지)');
+        // kg = Number(kg);
+        // m = Number(m);
+        
+
+        function BMI() {
+            let kg = document.getElementById('weight').value;
+            let m = document.getElementById('height').value;
+            let sum = parseInt(Number(kg) / (Number(m) * Number(m)));
+            if(sum <= 18.5){
+                document.getElementById('result').innerHTML = `<p class="orange">BMI지수는 ${sum}이므로 저체중입니다.</p>`;
+            }
+            else if(sum <= 23){
+                document.getElementById('result').innerHTML = `<p class='green'>BMI지수는 ${sum}이므로 정상입니다.</p>`;
+            }
+            else if(sum <= 25){
+                document.getElementById('result').innerHTML = `<p class='blue'>BMI지수는 ${sum}이므로 과체중입니다.</p>`;
+            }
+            else if(sum <= 30){
+                document.getElementById('result').innerHTML = `<p class='pouple'>BMI지수는 ${sum}이므로 비만입니다.</p>`;
+            }
+            else{
+                document.getElementById('result').innerHTML = `<p class='red'>BMI지수는 ${sum}이므로 고도비만입니다.</p>`;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>03_javascript_function_exec</h2>
+    <p>문. 함수를 활용한 비만도 측정지수 구하기</p>
+    <ol>
+        <li>신장을 입력하기 위한 명령프롬프트와 체중을 입력하기 위한 명령프롬포트를 사용</li>
+        <li>함수에 신장, 체중값을 사용하여 계산식 작성하기</li>
+        <li>적정체중인지를 비교하여 결과를 출력한다.</li>
+    </ol>
+    <p>BMI지수 = 몸무게(kg) / (신장(m) x 신장(m))</p>
+    <p>BMI지수가 18.5 이하면 저체중, 18.5~23은 정상, 23~25는 과체중, 25~30은 비만, 30~35는 고도비만</p>
+    <p>저체중은 배경색 주황색, 정상은 녹색, 과체중은 파랑, 비만은 보라색, 고도비만은 빨상색 배경으로 서식을 지정함.</p>
+    
+  <fieldset>
+        <legend>BMI지수 측정하기</legend>
+        <p><label for="height">신장 : </label><input type="text" id="height">m</p>
+        <p><label for="weight">몸무게 : </label><input type="text" id="weight">kg</p>
+        <p><input type="button" value="결과확인" onclick="BMI();"></p>
+  </fieldset>
+  <div id="result"></div>
+</body>
+</html>
