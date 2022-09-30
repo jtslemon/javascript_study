@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01_javascript_data_type(데이터 유형)</title>
+    <style>
+        .a{
+            font-weight: bold;
+            font-size: 30px;
+        }
+        .b{
+            color: #f00;
+            font-weight: bold;
+        }
+        .c{
+            color: #00f;
+        }
+        .d{
+            color: #333;
+            font-size: 14px;
+        }
+    </style>
+    <script>
+        // 1. 기본형(원시형)데이터
+        let s = '10'; // 문자데이터
+        let n = 10; // 숫자데이터
+        let b = true; // 불 데이터(true, false)
+        let n01; // undefinded 데이터(값이 정의 되지 않음)
+        let n02 = null; // null 데이터 = 값이 없다
+
+        // 2. 출력하기
+        document.write('변수' + s + '에 저장된 값은' + typeof(s) + '입니다. <br>');
+        document.write('변수' + n + '에 저장된 값은' + typeof(n) + '입니다. <br>');
+        document.write('변수' + b + '에 저장된 값은' + typeof(b) + '입니다. <br>');
+        document.write(' 변수' + n01 + '에 저장된 값은' + typeof(n01) + '입니다. <br>');
+        document.write(' 변수' + n02 + '에 저장된 값은' + typeof(n02) + '입니다. <br>');
+        document.write('<hr>');
+
+        // 3. 참조형 데이터 - 여러개의 데이터를 저장할 수 있다. (배열)
+        let array = [1,2,3,4,5,6,7,8,9,10];
+
+        //  배열출력하기
+        document.write(array + '<br>'); // 전체출력
+        document.write(array[3] + '<br>');
+        document.write(array[7] + '<br>');
+        document.write(array[9] + '<br>');
+
+        var array01 = ['일','월','화','수','목','금','토'];
+
+        // 출력하기 - 오늘의 요일은 '수요일'입니다.
+        document.write('오늘의 요일은 ' + array01[3] + '요일 입니다.<br>');
+
+        let info = ['홍길동', '24','종로구 구기동','그린컴퓨터아트학원','022-722-1333'];
+        // 출력하기 - 나의 이름은 홍길동이고 나이는 23세이며 그린컴퓨터아트학원 수강생입니다.
+        document.write('나의 이름은 ' + info[0] + '이고 나이는 ' + info[1] + '세이며 ' + info[3] + ' 수강생입니다.<br>');
+        // es6문법 방식
+        document.write(`나의 이름은 ${info[0]}이고 나이는 ${info[1]}세이며 ${info[3]} 수강생입니다.<br>`);
+
+        // 함수형 데이터
+        function sam() {
+            alert('함수형 데이터입니다. 호출하기전까지 출력이 안되요.');
+        };
+
+        // 함수이름을 호출하여 실행한다.
+        // sam();
+
+        // 사용자 객체
+        let perseon= {
+            'age':'20',
+            'job':'학생',
+            'height':'175'
+        };
+        // 객체 데이터 출력하기
+        document.write(`${perseon.age}<br>`); // 나이출력
+        document.write(`${perseon.job}<br>`); // 직업출력
+        document.write(`${perseon.height}<br>`); // 신장출력
+
+        // 마켓컬리 사이트에서 인기상품 내용을 객체로 만들어서 출력하기
+        // 상품명(굵게, 30px), 가격(빨강, 굵게), 할인가(파랑), 상세설명(#333, 14px)이 출력되게 하시오
+        let market = {
+            'object':'단팥빵',
+            'int':'11,000원',
+            'sale':'10%',
+            'str':'근대골목단팥빵'
+        };
+        document.write(`<p class='a'>${market.object}</p> <p class='b'>${market.int}</p> <p class='c'>${market.sale}</p> <p class='d'>${market.str}</p>`);
+    </script>
+</head>
+<body>
+    <h2>01_javascript_data_type(데이터 유형)</h2>
+    <p>자바스크립트에서 사용하는 데이터 유형에 대해 알아보기</p>
+    <p>변수안에 들어간 데이터의 유형을 알아보기 위해서는 typeof 연산자를 활용하면 된다.</p>
+    <ul>
+        <li>문자데이터형(string)</li>
+        <li>숫자데이터형(number)</li>
+        <li>부울형(boolean) - true(확인), false(취소)</li>
+        <li>찾을 수 없는 데이터형(undefined)</li>
+        <li>값이 없는 데이터(null)</li>
+        <li>배열형 데이터(array)</li>
+        <li>함수형 데이터(function)</li>
+        <li>객체(object) - document, window, alert, confirm...</li>
+    </ul>    
+</body>
+</html>
